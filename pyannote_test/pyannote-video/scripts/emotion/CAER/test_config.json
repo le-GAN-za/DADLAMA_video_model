@@ -1,0 +1,23 @@
+{
+	"name": "CAERS_test_session",
+	"n_gpu": 1,
+	"arch": {
+		"type": "CAERSNet",
+		"args": {}
+	},
+	"test_loader": {
+		"type": "CAERSDataLoader",
+		"args": {
+			"root": "./frame/",
+			"detect_file": "./output/tracking_output/final_test.track.txt",
+			"train": false,
+			"batch_size": 32,
+			"shuffle": false,
+			"num_workers": 2
+		}
+	},
+	"loss": "cross_entropy",
+	"metrics": [
+		"accuracy"
+	]
+}
